@@ -28,9 +28,9 @@
                 <div class="span12">
                     <div class="firstLevelItem" data-ng-controller="FirstLevelController" data-ng-repeat="firstLevelItem in firstLevelItems">
                         <h2>{{firstLevelItem}}</h2>
-                        <div class="secondLevelItem">
+                        <div>
                             <ul>
-                                <li data-ng-repeat="secondLevelItem in secondLevelItems">{{secondLevelItem}}</li>
+                                <li class="secondLevelItem" data-ng-repeat="secondLevelItem in secondLevelItems">{{secondLevelItem}}</li>
                             </ul>
                         </div>
                     </div>

@@ -1,6 +1,4 @@
-﻿// ReSharper disable InconsistentNaming
-
-(function () {
+﻿(function () {
 
     "use strict";
 
@@ -10,7 +8,23 @@
 
         if (window.location.search === "?mode=e2etest1") {
             $httpBackend.whenPOST(/^Index.aspx\/GetFirstLevelItems/).respond({ "d": ["FirstLevelItemA", "FirstLevelItemB"] });
-            $httpBackend.whenPOST(/^Index.aspx\/GetSecondLevelItems/).respond([]);
+            $httpBackend.whenPOST(/^Index.aspx\/GetSecondLevelItems/).respond(function (method, url, data) {
+                var firstLevelItem = getFirstLevelItemFromPostParams(data);
+                var secondLevelItems = [];
+                for (var i = 0; i < 3; i++) {
+                    var secondLevelItem = firstLevelItem + " child " + i;
+                    secondLevelItems.push(secondLevelItem);
+                }
+                var result = {
+                    d: secondLevelItems
+                };
+                return [200, angular.toJson(result)];
+            });
         }
+
+        var getFirstLevelItemFromPostParams = function (data) {
+            var postParams = angular.fromJson(data);
+            return postParams.firstLevelItem;
+        };
     } ]);
 } ());
