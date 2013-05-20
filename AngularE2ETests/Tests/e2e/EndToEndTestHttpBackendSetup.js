@@ -15,10 +15,10 @@
                     var secondLevelItem = firstLevelItem + " child " + i;
                     secondLevelItems.push(secondLevelItem);
                 }
-                var result = {
+                var responseData = {
                     d: secondLevelItems
                 };
-                return [200, angular.toJson(result)];
+                return [200, responseData];
             });
         }
 
