@@ -4,47 +4,48 @@
 
     "use strict";
 
-    describe('Controllers', function () {
+    describe("FirstLevelController", function () {
 
         var _parentScope;
         var _scope;
         var _controller;
+        var _httpBackend;
 
-        beforeEach(angular.mock.module('TestApp'));
+        var TEST_FIRST_LEVEL_ITEM = "ABC";
 
-        describe('FirstLevelController', function () {
+        beforeEach(function () {
 
-            var _httpBackend;
-            var TEST_FIRST_LEVEL_ITEM = "ABC";
-
-            beforeEach(angular.mock.inject(function ($rootScope, $controller, _$httpBackend_) {
+            angular.mock.module("TestApp");
+            
+            angular.mock.inject(function($rootScope, $controller, _$httpBackend_) {
 
                 _httpBackend = _$httpBackend_;
 
-                _httpBackend.whenPOST(
-                    /^Index.aspx\/GetSecondLevelItems/,
-                    new FirstLevelItemMatcher(TEST_FIRST_LEVEL_ITEM))
-                        .respond({ "d": ["i", "ii", "iii"] });
+                _httpBackend
+                    .whenPOST(
+                        /^Index.aspx\/GetSecondLevelItems/,
+                        new FirstLevelItemMatcher(TEST_FIRST_LEVEL_ITEM))
+                    .respond({ "d": ["i", "ii", "iii"] });
 
                 _parentScope = $rootScope.$new();
                 _parentScope.firstLevelItem = TEST_FIRST_LEVEL_ITEM;
 
                 _scope = _parentScope.$new();
-                _controller = $controller('FirstLevelController', {
+                _controller = $controller("FirstLevelController", {
                     $scope: _scope
                 });
 
-            }));
-
-            it('should be able to construct an instance of FirstLevelController', function () {
-                expect(_controller).not.toBeNull();
             });
+        });
 
-            it("should initialise the second level items in $scope correctly", function () {
-                expect(_scope.secondLevelItems).toBeUndefined();
-                _httpBackend.flush();
-                expect(_scope.secondLevelItems).toEqual(["i", "ii", "iii"]);
-            });
+        it("should be able to construct an instance of FirstLevelController", function () {
+            expect(_controller).not.toBeNull();
+        });
+
+        it("should initialise the second level items in $scope correctly", function () {
+            expect(_scope.secondLevelItems).toBeUndefined();
+            _httpBackend.flush();
+            expect(_scope.secondLevelItems).toEqual(["i", "ii", "iii"]);
         });
     });
 
@@ -54,4 +55,5 @@
             return postParams && postParams.firstLevelItem && postParams.firstLevelItem === firstLevelItem;
         };
     };
+    
 } ());

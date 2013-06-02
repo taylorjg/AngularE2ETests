@@ -4,38 +4,36 @@
 
     "use strict";
 
-    describe('Controllers', function () {
+    describe("MainController", function () {
 
         var _scope;
         var _controller;
+        var _httpBackend;
 
-        beforeEach(angular.mock.module('TestApp'));
+        beforeEach(function () {
 
-        describe('MainController', function () {
-
-            var _httpBackend;
-
-            beforeEach(angular.mock.inject(function ($rootScope, $controller, _$httpBackend_) {
+            angular.mock.module("TestApp");
+            
+            angular.mock.inject(function($rootScope, $controller, _$httpBackend_) {
 
                 _httpBackend = _$httpBackend_;
                 _httpBackend.whenPOST(/^Index.aspx\/GetFirstLevelItems/).respond({ "d": ["A", "B"] });
-                
+
                 _scope = $rootScope.$new();
-                _controller = $controller('MainController', {
+                _controller = $controller("MainController", {
                     $scope: _scope
                 });
-                
-            }));
-
-            it('should be able to construct an instance of MainController', function () {
-                expect(_controller).not.toBeNull();
             });
+        });
 
-            it("should initialise the first level items in $scope correctly", function () {
-                expect(_scope.firstLevelItems).toBeUndefined();
-                _httpBackend.flush();
-                expect(_scope.firstLevelItems).toEqual(["A", "B"]);
-            });
+        it("should be able to construct an instance of MainController", function () {
+            expect(_controller).not.toBeNull();
+        });
+
+        it("should initialise the first level items in $scope correctly", function () {
+            expect(_scope.firstLevelItems).toBeUndefined();
+            _httpBackend.flush();
+            expect(_scope.firstLevelItems).toEqual(["A", "B"]);
         });
     });
 } ());
