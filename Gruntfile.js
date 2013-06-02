@@ -11,7 +11,8 @@ module.exports = function (grunt) {
             files: [
                 "Gruntfile.js",
                 "AngularE2ETests/Scripts/*.js",
-                "AngularE2ETests/Tests/e2e/*.js"
+                "AngularE2ETests/Tests/e2e/*.js",
+                "AngularE2ETests/Tests/unit/*.js"
             ]
         },
 

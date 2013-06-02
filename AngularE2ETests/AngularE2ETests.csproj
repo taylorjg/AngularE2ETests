@@ -78,6 +78,7 @@
     <Content Include="Scripts\ThirdParty\Bootstrap\js\bootstrap.js" />
     <Content Include="Scripts\ThirdParty\Bootstrap\js\bootstrap.min.js" />
     <Content Include="Scripts\ThirdParty\jQuery\jquery-1.9.1.js" />
+    <Content Include="Styles\AngularE2ETests.css" />
     <Content Include="Tests\e2e\EndToEndTestHttpBackendSetup.js" />
     <Content Include="Tests\e2e\EndToEndTestRunner.html" />
     <Content Include="Tests\e2e\EndToEndTestScenarios.js" />
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

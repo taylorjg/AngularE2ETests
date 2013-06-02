@@ -7,13 +7,14 @@
     <head runat="server">
         <title>AngularE2ETests</title>
         <link href="Scripts/ThirdParty/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="Styles/AngularE2ETests.css" rel="stylesheet" type="text/css" />
         <script src="Scripts/ThirdParty/jQuery/jquery-1.9.1.js" type="text/javascript"></script>
         <script src="Scripts/ThirdParty/Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="Scripts/ThirdParty/AngularJS/angular.js" type="text/javascript"></script>
         <script src="Scripts/app.js" type="text/javascript"></script>
         <% if (IsEndToEndTest) { %>
             <script src="Scripts/ThirdParty/AngularJS/angular-mocks.js" type="text/javascript"></script>
-            <script type="text/javascript" src="Tests/e2e/EndToEndTestHttpBackendSetup.js"></script>
+            <script src="Tests/e2e/EndToEndTestHttpBackendSetup.js" type="text/javascript"></script>
         <% } %>
         <style>
             [data-ng-cloak] {
@@ -26,7 +27,7 @@
         <div data-ng-controller="MainController" class="container">
             <div class="row">
                 <div class="span12">
-                    <div class="firstLevelItem" data-ng-controller="FirstLevelController" data-ng-repeat="firstLevelItem in firstLevelItems">
+                    <div class="firstLevelItem" data-ng-cloak data-ng-controller="FirstLevelController" data-ng-repeat="firstLevelItem in firstLevelItems">
                         <h2>{{firstLevelItem}}</h2>
                         <div>
                             <ul>

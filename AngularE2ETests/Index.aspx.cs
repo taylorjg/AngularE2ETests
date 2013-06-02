@@ -1,35 +1,9 @@
-﻿using System.Web.Configuration;
-using System.Web.Services;
-using System.Web.UI;
+﻿using System.Web.Services;
 
 namespace AngularE2ETests
 {
-    public partial class Index : Page
+    public partial class Index : PageBase
     {
-        public bool IsInProduction
-        {
-            get
-            {
-                var stringValue = WebConfigurationManager.AppSettings["InProduction"];
-                bool boolValue;
-                return bool.TryParse(stringValue, out boolValue) && boolValue;
-            }
-        }
-
-        public bool IsEndToEndTest
-        {
-            get
-            {
-                if (IsInProduction)
-                {
-                    return false;
-                }
-
-                var mode = Request.QueryString["mode"];
-                return !string.IsNullOrEmpty(mode) && mode.StartsWith("e2etest");
-            }
-        }
-
         private const string Fruit = "Fruit";
         private const string Vegetables = "Vegetables";
         private const string Herbs = "Herbs";
