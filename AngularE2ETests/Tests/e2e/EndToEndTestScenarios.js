@@ -1,16 +1,20 @@
 ﻿/// <reference path="../../Scripts/ThirdParty/AngularJS/angular-scenario.js" />
 /// <reference path="../../Scripts/ThirdParty/AngularJS/angular-mocks.js" />
 
+// ReSharper disable InconsistentNaming
+
 (function () {
 
     "use strict";
 
     describe("AngularE2ETests", function () {
 
+        var BASE_URL = "http://" + window.location.host + "/Index.aspx";
+        
         describe("First level items", function () {
 
             beforeEach(function () {
-                browser().navigateTo("http://localhost:65272/Index.aspx?mode=e2etest1");
+                browser().navigateTo(BASE_URL + "?mode=e2etest1");
             });
 
             it("displays the correct number of first level items", function () {
@@ -26,7 +30,7 @@
         describe("Second level items", function () {
 
             beforeEach(function () {
-                browser().navigateTo("http://localhost:65272/Index.aspx?mode=e2etest1");
+                browser().navigateTo(BASE_URL + "?mode=e2etest1");
             });
 
             it("first level items display the correct number of second level items", function () {
