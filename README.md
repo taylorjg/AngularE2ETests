@@ -26,7 +26,6 @@ $ npm test
 Or you can directly enter the Karma command:
 
 ```
-$ set CHROME_BIN=C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe
 $ karma start karma.conf.js
 ```
 
@@ -41,6 +40,6 @@ $ karma start karma_e2e.conf.js
 
 ## NOTE
 
-This project uses Karma version 0.8.5. I believe there may be a breaking change in later versions of Karma in terms of configuration. So, this may be important if you are using a later version of Karma.
+This project currently uses Karma version 0.8.5. I believe there may be a breaking change in later versions of Karma in terms of configuration. So, this may be important if you are using a later version of Karma.
 
 * https://github.com/karma-runner/karma/issues/507
