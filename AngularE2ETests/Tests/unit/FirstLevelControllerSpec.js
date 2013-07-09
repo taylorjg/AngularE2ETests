@@ -11,6 +11,7 @@
         var _controller;
         var _httpBackend;
 
+        var REGEXP_FOR_GETSECONDLEVELITEMS_WEB_METHOD_URL = /^Index.aspx\/GetSecondLevelItems/;
         var TEST_FIRST_LEVEL_ITEM = "ABC";
 
         beforeEach(function () {
@@ -23,7 +24,7 @@
 
                 _httpBackend
                     .whenPOST(
-                        /^Index.aspx\/GetSecondLevelItems/,
+                        REGEXP_FOR_GETSECONDLEVELITEMS_WEB_METHOD_URL,
                         new FirstLevelItemMatcher(TEST_FIRST_LEVEL_ITEM))
                     .respond({ "d": ["i", "ii", "iii"] });
 
@@ -50,8 +51,8 @@
     });
 
     var FirstLevelItemMatcher = function (firstLevelItem) {
-        this.test = function (data) {
-            var postParams = angular.fromJson(data);
+        this.test = function (requestBody) {
+            var postParams = angular.fromJson(requestBody);
             return postParams && postParams.firstLevelItem && postParams.firstLevelItem === firstLevelItem;
         };
     };

@@ -6,6 +6,8 @@
 
     describe("MainController", function () {
 
+        var REGEXP_FOR_GETFIRSTLEVELITEMS_WEB_METHOD_URL = /^Index.aspx\/GetFirstLevelItems/;
+
         var _scope;
         var _controller;
         var _httpBackend;
@@ -13,11 +15,11 @@
         beforeEach(function () {
 
             angular.mock.module("TestApp");
-            
-            angular.mock.inject(function($rootScope, $controller, _$httpBackend_) {
+
+            angular.mock.inject(function ($rootScope, $controller, _$httpBackend_) {
 
                 _httpBackend = _$httpBackend_;
-                _httpBackend.whenPOST(/^Index.aspx\/GetFirstLevelItems/).respond({ "d": ["A", "B"] });
+                _httpBackend.whenPOST(REGEXP_FOR_GETFIRSTLEVELITEMS_WEB_METHOD_URL).respond({ "d": ["A", "B"] });
 
                 _scope = $rootScope.$new();
                 _controller = $controller("MainController", {
