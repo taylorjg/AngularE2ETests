@@ -1,0 +1,29 @@
+{
+  "name": "AngularE2ETests",
+  "version": "0.0.1",
+  "description": "Exploring end-to-end (e2e) and unit tests in AngularJS applications especially around $httpBackend",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.5.2",
+    "grunt-contrib-watch": "~0.4.3",
+    "karma": "~0.8.5",
+    "phantomjs": "~1.9.1-0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taylorjg/AngularE2ETests.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "e2e",
+    "testing"
+  ],
+  "author": "Jonathan Taylor",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
