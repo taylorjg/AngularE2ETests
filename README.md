@@ -40,7 +40,19 @@ $ karma start karma_e2e.conf.js
 
 ## Screenshot
 
-The following screenshot shows the unit tests and e2e tests running under Karma:
+The following screenshot shows the application running in a web browser:
+
+![Screenshot1](https://raw.github.com/taylorjg/AngularE2ETests/master/Images/AngularE2ETests_running_app_in_browser.png)
+
+The following screenshot shows the Jasmine unit tests running in a web browser:
+
+![Screenshot1](https://raw.github.com/taylorjg/AngularE2ETests/master/Images/AngularE2ETests_unit_tests_in_browser.png)
+
+The following screenshot shows the e2e tests running in a web browser:
+
+![Screenshot1](https://raw.github.com/taylorjg/AngularE2ETests/master/Images/AngularE2ETests_e2e_tests_in_browser.png)
+
+The following screenshot shows the Jasmine unit tests and e2e tests running under Karma:
 
 ![Screenshot1](https://raw.github.com/taylorjg/AngularE2ETests/master/Images/AngularE2ETests_screenshot.png)
 
