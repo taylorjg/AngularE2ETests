@@ -38,6 +38,12 @@ $ set PHANTOMJS_BIN=%CD%\node_modules\phantomjs\lib\phantom\phantomjs.exe
 $ karma start karma_e2e.conf.js
 ```
 
+## Screenshot
+
+The following screenshot shows the unit tests and e2e tests running under Karma:
+
+![Screenshot1](https://raw.github.com/taylorjg/AngularE2ETests/master/Images/AngularE2ETests_screenshot.png)
+
 ## NOTE
 
 This project currently uses Karma version 0.8.5. I believe there may be a breaking change in later versions of Karma in terms of configuration. So, this may be important if you are using a later version of Karma.
