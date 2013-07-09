@@ -38,7 +38,7 @@ $ set PHANTOMJS_BIN=%CD%\node_modules\phantomjs\lib\phantom\phantomjs.exe
 $ karma start karma_e2e.conf.js
 ```
 
-## Screenshot
+## Screenshots
 
 The following screenshot shows the application running in a web browser:
 
