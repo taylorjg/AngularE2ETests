@@ -28,6 +28,9 @@ proxies = {
 };
 
 
+urlRoot = "/_karma_/";
+
+
 // test results reporter to use
 // possible values: "dots", "progress", "junit"
 reporters = ["progress"];
