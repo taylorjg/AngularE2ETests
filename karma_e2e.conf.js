@@ -10,9 +10,6 @@ basePath = "";
 files = [
     ANGULAR_SCENARIO,
     ANGULAR_SCENARIO_ADAPTER,
-	"AngularE2ETests/Scripts/ThirdParty/AngularJS/angular.js",
-	"AngularE2ETests/Scripts/ThirdParty/AngularJS/angular-mocks.js",
-	"AngularE2ETests/Scripts/*.js",
 	"AngularE2ETests/Tests/e2e/EndToEndTestHttpBackendSetup.js",
 	"AngularE2ETests/Tests/e2e/EndToEndTestScenarios.js"
 ];
